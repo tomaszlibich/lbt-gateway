@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  gateway:
+    container_name: lbt-gateway
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    restart: unless-stopped
+
+    environment:
+      AWS_REGION: eu-west-2
+
+    env_file:
+      - .env
+
+    networks:
+      - lbt-net
+
+networks:
+  lbt-net:
+    external: true
+    name: lbt-net

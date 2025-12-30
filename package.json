@@ -1,0 +1,20 @@
+{
+  "name": "lbt-gateway",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "docker:remove-images": "docker image prune -f",
+    "docker:start": "docker compose up -d --build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tomasz Libich",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  },
+  "type": "module"
+}
