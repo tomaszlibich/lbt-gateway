@@ -4,11 +4,14 @@ import express from "express";
 import bodyParser from "body-parser";
 
 import routes from "./routes/index.js";
+//import { auth } from "./middleware/auth.js";
 
 const port = process.env.PORT || 4000;
 const app = express();
 
 app.set("trust proxy", true);
+
+//app.use(auth);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(routes);
